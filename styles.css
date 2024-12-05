@@ -1,0 +1,50 @@
+/* styles.css */
+
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section Styling */
+.bg-light {
+    background: linear-gradient(120deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 14px;
+}
+
+/* Form Styling */
+form input,
+form button {
+    border-radius: 5px;
+}
+
+/* List Group Customizations */
+.list-group-item {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.list-group-item:hover {
+    transform: scale(1.02);
+}
+
+/* Custom Button Hover */
+.btn:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
