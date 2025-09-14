@@ -1,0 +1,181 @@
+/* Reset & base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* App container */
+.app {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 10px;
+}
+
+input {
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 60%;
+  max-width: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px #0077b6;
+}
+
+button {
+  background: #0077b6;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #023e8a;
+}
+
+/* Today's weather widget */
+.weather-info {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem auto 3rem auto; /* center + space below */
+  color: #fff;
+  animation: zoomIn 0.6s ease;
+  max-width: 400px; /* centered nicely */
+  text-align: center;
+}
+
+.weather-info img {
+  width: 60px;
+  margin: 0.5rem 0;
+}
+
+/* Forecast section */
+.forecast {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.forecast h3 {
+  color: #450606;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+/* Forecast cards row */
+.forecast-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  /* center horizontally */
+  gap: 2rem;                /* spacing between widgets */
+  flex-wrap: nowrap;        /* keep in one row */
+  overflow-x: auto;         /* scroll if too many */
+  padding: 1rem 0;
+}
+
+.day {
+  flex: 0 0 auto;
+  width: 160px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 1rem;
+  color: #2c1414;
+  text-align: center;
+  animation: slideUp 0.8s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.day:hover {
+  transform: scale(1.05);
+}
+
+.day img {
+  width: 50px;
+}
+
+/* Error message */
+.error {
+  color: #ff4d4f;
+  font-weight: bold;
+  margin-top: 1rem;
+  animation: shake 0.3s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .forecast-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
